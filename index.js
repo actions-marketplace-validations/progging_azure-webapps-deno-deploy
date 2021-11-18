@@ -1,7 +1,7 @@
 const core = require('@actions/core')
-// const github = require('@actions/github')
+require('@actions/github')
 const exec = require('@actions/exec')
-const fetch = require('node-fetch')
+const axios = require('axios')
 
 //TODO Make these settings:
 const dockerUser = `progging`
@@ -186,10 +186,10 @@ async function main() {
     const tags = []
     let url = dockerTagsUrl
     while (true) {
-      const resp = await fetch(url)
-      const { next, results } = await resp.json()
+      const response = await axios.get(url)
+      const { next, results } = response.data
       tags.push(...results.map((r) => r.name))
-      if (!next) {
+      if (next === null) {
         return tags
       }
       url = next
