@@ -1,6 +1,6 @@
-FROM debian:stable-20200514-slim
+FROM debian:stable-slim
 
-ARG DENO_VERSION=1.0.2
+ARG DENO_VERSION=1.16.2
 ENV DENO_VERSION=${DENO_VERSION}
 ARG DEBIAN_FRONTEND=noninteractive
 
