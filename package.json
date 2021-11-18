@@ -1,11 +1,14 @@
 {
   "name": "azure-webapps-deno-deploy",
-  "description": "",
+  "description": "A GitHub Action for deploying Deno sauropod web apps to Azure cloud",
   "main": "index.js",
   "scripts": {
     "build": "ncc build index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "azure",
+    "deno"
+  ],
   "author": "Anthony Chu",
   "license": "MIT",
   "dependencies": {
