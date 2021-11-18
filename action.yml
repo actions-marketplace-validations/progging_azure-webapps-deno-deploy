@@ -1,5 +1,5 @@
-name: Deploy Deno to Azure App Service
-description: Publish a Deno 🦕 web app to Azure App Service on Linux
+name: Deno for Azure
+description: Publish a Deno app to Azure App Service on Linux
 branding:
   icon: arrow-up-circle
   color: blue
@@ -14,12 +14,11 @@ inputs:
     description: Path to zip package to deploy
     required: true
   script-file:
-    description: Path to script to pass to deno run
+    description: Path to script to pass to Deno run
     required: true
   deno-version:
-    description: Version of deno to use
-    required: false
-    default: latest
+    description: Version of Deno to use
+    required: true
 runs:
   using: node14
   main: dist/index.js
